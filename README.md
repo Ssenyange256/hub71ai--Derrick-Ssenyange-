@@ -83,3 +83,8 @@ Connected planning uses Responses function calls to choose a curated-source look
 ## First-week arrival experience
 
 My first week is the initial signed-in view. A short intake captures arrival, journey, household, focus and a separate monthly housing target. Three self-reported preparation stages cover departure, arrival-day transport and the first week of settling. The editable Markdown arrival pack includes the reviewed profile, official links, document readiness, housing questions and a Corniche visit. Save progress stores the housing target and stage completion with the owned account state; older saved states remain compatible. Housing targets are user budgets, not market price estimates. No transport or accommodation booking is submitted.
+
+
+## Calendar, video and settling services
+
+The landing arrival-date form downloads an all-day ICS reminder with a valid exclusive end date. The supplied YouTube video is embedded with muted autoplay requested and player controls; playback remains subject to browser policy, network access and the video owner allowing embeds. A direct YouTube fallback link is provided. Driving & education contains official guidance and downloadable enquiry checklists for driving licences, infant/nursery care, schools and higher education. No application is automatically submitted; eligibility, places and fees remain subject to the relevant authority or provider. Optional transport and education preparation tasks are included in the roadmap.
