@@ -1,8 +1,9 @@
 import {env} from 'cloudflare:workers';
+import {firstWeekSchema} from './first-week';
 import {careerSchema} from './career';
 import {z} from 'zod';
 import {profileSchema,buildPlan,setTaskComplete} from './planner';
-export const workspaceSchema=z.object({profile:profileSchema,done:z.array(z.string().max(100)).max(80),summary:z.string().max(3000),mode:z.enum(['Rules-based planning','AI-assisted planning','Rules-based planning · fictional sample','AI-assisted planning · fictional sample']),career:careerSchema.nullable().optional(),enquiry:z.string().max(2500).optional(),agentTrace:z.array(z.object({tool:z.enum(['lookup_curated_guidance','build_preparation_roadmap','draft_preparation_enquiry']),callId:z.string().max(200),detail:z.string().max(1000),elapsedMs:z.number().int().min(0).max(90000)})).max(6).optional()});
+export const workspaceSchema=z.object({profile:profileSchema,done:z.array(z.string().max(100)).max(80),summary:z.string().max(3000),mode:z.enum(['Rules-based planning','AI-assisted planning','Rules-based planning · fictional sample','AI-assisted planning · fictional sample']),career:careerSchema.nullable().optional(),firstWeek:firstWeekSchema.optional(),enquiry:z.string().max(2500).optional(),agentTrace:z.array(z.object({tool:z.enum(['lookup_curated_guidance','build_preparation_roadmap','draft_preparation_enquiry']),callId:z.string().max(200),detail:z.string().max(1000),elapsedMs:z.number().int().min(0).max(90000)})).max(6).optional()});
 export type WorkspaceState=z.infer<typeof workspaceSchema>;
 function database(){const db=(env as unknown as {DB?:D1Database}).DB;if(!db)throw Error('Saved workspace is unavailable. Keep your inputs and retry.');return db;}
 export async function readWorkspace(userId:string){const row=await database().prepare('SELECT state FROM workspaces WHERE user_id = ?').bind(userId).first<{state:string}>();return row?workspaceSchema.parse(JSON.parse(row.state)):null;}

@@ -78,3 +78,8 @@ Current connection check on 2 October 2026: no OPENAI_API_KEY is configured; the
 ## Bounded preparation tool workflow
 
 Connected planning uses Responses function calls to choose a curated-source lookup, build the reviewed profile's deterministic task graph, and create an unsent enquiry draft. Function arguments are validated and execution is capped at six turns/calls. Successful tools and actual call IDs are shown; no simulated tool success is claimed. Local source notes are not live government queries, and preparation dependencies are not verified regulatory requirements. Trace and enquiry are stored with explicit Save progress and included in the pack. Free text first extracts for review; generating follows confirmation. Foreign-currency capital is not converted into an AED setup budget. Live inference remains untested without an approved production key.
+
+
+## First-week arrival experience
+
+My first week is the initial signed-in view. A short intake captures arrival, journey, household, focus and a separate monthly housing target. Three self-reported preparation stages cover departure, arrival-day transport and the first week of settling. The editable Markdown arrival pack includes the reviewed profile, official links, document readiness, housing questions and a Corniche visit. Save progress stores the housing target and stage completion with the owned account state; older saved states remain compatible. Housing targets are user budgets, not market price estimates. No transport or accommodation booking is submitted.
